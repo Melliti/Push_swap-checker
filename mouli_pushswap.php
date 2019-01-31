@@ -109,15 +109,18 @@ function fillList(&$la, $values) {
 
 function moulinette($values, $ops, &$la, &$lb, $login = null, $filename = null) {
     $commands = explode(' ', trim($ops));
+    //$content = file_get_contents($ops);
+    //$commands = explode(' ', trim($content));
     fillList($la, $values);
     solver($commands, $la, $lb);
-    if (is_sorted($la) == true)
+    if (is_sorted($la) == true && count($lb) == 0)
     {
         if ($login != null)
         {
             if ($filename != null)
-                file_put_contents(readline($filename) . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
-            file_put_contents(readline(PHP_EOL . "Filename: ") . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
+                file_put_contents($filename . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
+            else
+                file_put_contents(readline(PHP_EOL . "Filename: ") . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
         }
         echo "Sorted in " . count($commands) . " operations" . PHP_EOL;
     }
