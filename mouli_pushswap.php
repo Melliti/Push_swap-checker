@@ -109,8 +109,13 @@ function fillList(&$la, $values) {
 
 function moulinette($values, $ops, &$la, &$lb, $login = null, $filename = null) {
     $commands = explode(' ', trim($ops));
-    //$content = file_get_contents($ops);
-    //$commands = explode(' ', trim($content));
+
+    /*
+    ** Comment above line and uncomment below lines to read commands from a file instead of through the CLI
+    ** $content = file_get_contents($ops);
+    ** $commands = explode(' ', trim($content));
+    */
+
     fillList($la, $values);
     solver($commands, $la, $lb);
     if (is_sorted($la) == true && count($lb) == 0)
