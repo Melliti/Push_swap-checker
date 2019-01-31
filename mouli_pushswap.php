@@ -125,9 +125,10 @@ function moulinette($values, $ops, &$la, &$lb, $login = null, $filename = null) 
             if ($filename != null)
                 file_put_contents($filename . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
             else
-                file_put_contents(readline(PHP_EOL . "Filename: ") . ".txt" , $login . ";" . count($commands) . PHP_EOL, FILE_APPEND);
+                echo $login . "Sorted in " . count($commands) . PHP_EOL;
         }
-        echo "Sorted in " . count($commands) . " operations" . PHP_EOL;
+        else
+            echo "Sorted in " . count($commands) . " operations" . PHP_EOL;
     }
     else
         echo "Unsorted" . PHP_EOL;
