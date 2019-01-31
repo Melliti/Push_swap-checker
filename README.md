@@ -1,7 +1,7 @@
 # Push_swap-checker
 Push_swap is a school project from Epitech and Web@cadémie. This project checks if the results are correct
 
-The purpose is to sort an unordered list (**la**) of int with imposed commands. To help you, you can use a second list (**lb**) empty at the beginning.
+The purpose is to sort an unordered list (**la**) of number with imposed commands. To help you, you can use a second list (**lb**) empty at the beginning.
 The commands are:
   - **sa**: Swap position of the first two number from **la**.
   - **sb**: Swap position of the first two number from **lb**.
